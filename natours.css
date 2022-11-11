@@ -1,0 +1,853 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.container {
+  width: 95%;
+  max-width: 1500px;
+  margin: 30px auto;
+  font-family: "Lato", sans-serif;
+  background-color: #f7f7f7;
+  position: relative;
+}
+
+::selection {
+  background-color: rgba(40, 180, 133, 0.8);
+  color: white;
+}
+
+.header {
+  background-color: green;
+  background-size: cover;
+  height: 95vh;
+  clip-path: polygon(0 0, 100% 0%, 100% 82%, 0% 100%);
+  background-image: linear-gradient(
+      to right bottom,
+      rgba(126, 213, 111, 0.8),
+      rgba(40, 180, 133, 0.8)
+    ),
+    url(https://natours.netlify.app/img/hero.jpg);
+}
+
+.nav-checkbox {
+  display: none;
+}
+.nav-background {
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  position: fixed;
+  top: 60px;
+  right: 80px;
+  background-image: radial-gradient(#7ed56f, #28b485);
+  z-index: 1000;
+  -webkit-transition: -webkit-transform 0.8s cubic-bezier(0.86, 0, 0.07, 1);
+  transition: -webkit-transform 0.8s cubic-bezier(0.86, 0, 0.07, 1);
+  transition: transform 0.8s cubic-bezier(0.86, 0, 0.07, 1);
+  transition: transform 0.8s cubic-bezier(0.86, 0, 0.07, 1),
+    -webkit-transform 0.8s cubic-bezier(0.86, 0, 0.07, 1);
+}
+
+.nav-nav {
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 0;
+  opacity: 0;
+  width: 0;
+  -webkit-transition: all 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  transition: all 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.nav-button {
+  display: none;
+}
+
+.nav-list {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  list-style: none;
+  text-align: center;
+  width: 100%;
+}
+
+.nav-item {
+  margin: 30px;
+}
+
+.nav-link:link,
+.nav-link:visited {
+  display: inline-block;
+  font-size: xx-large;
+  font-weight: 300;
+  padding: 10px 20px;
+  color: white;
+  text-decoration: none;
+  text-transform: uppercase;
+  background-image: linear-gradient(
+    120deg,
+    transparent 0%,
+    transparent 50%,
+    #fff 50%
+  );
+  background-size: 220%;
+  -webkit-transition: all 0.4s;
+  transition: all 0.4s;
+}
+
+.nav-link:hover,
+.nav-link:active {
+  background-position: 100%;
+  color: #55c57a;
+  -webkit-transform: translateX(1rem);
+  transform: translateX(1rem);
+}
+
+.nav-link:link span,
+.nav-link:visited span {
+  margin-right: 1.5rem;
+  display: inline-block;
+}
+
+.nav-checkbox:checked ~ .nav-background {
+  -webkit-transform: scale(80);
+  transform: scale(80);
+}
+
+.nav-checkbox:checked ~ .nav-nav {
+  z-index: 1500;
+  opacity: 1;
+  width: 100%;
+}
+
+.header img {
+  width: 70px;
+  margin: 40px 0 0 40px;
+}
+
+.hamburger {
+  background-color: white;
+  width: 65px;
+  padding: 25px 15px 25px 15px;
+  display: inline-block;
+  border-radius: 50%;
+  position: fixed;
+  right: 70px;
+  top: 60px;
+  z-index: 2000;
+}
+
+.hamburger div:nth-last-child(1) {
+  margin-bottom: 0;
+}
+
+.hamburger div {
+  width: 80%;
+  background-color: black;
+  height: 2px;
+  margin: 0 auto;
+  margin-bottom: 4px;
+}
+
+.textCon {
+  width: 60%;
+  text-align: center;
+  margin: 120px auto;
+}
+
+.textCon h1 {
+  font-size: 60px;
+  font-weight: 300;
+  color: white;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  letter-spacing: 30px;
+}
+
+.textCon h3 {
+  /* font-size: 0px; */
+  font-weight: 300;
+  color: white;
+  margin-bottom: 60px;
+  text-transform: uppercase;
+  letter-spacing: 15px;
+  word-spacing: 10px;
+}
+
+.btn {
+  background-color: white;
+  padding: 20px 40px;
+  text-transform: uppercase;
+  border: none;
+  border-radius: 50px;
+  color: rgb(112, 110, 110);
+  position: relative;
+  transition: all 0.6s;
+  cursor: pointer;
+}
+
+.section-1 {
+  background-color: #f7f7f7;
+  padding: 100px 0;
+}
+
+h1 {
+  text-align: center;
+  font-size: 35px;
+  font-weight: 700;
+  margin-bottom: 50px;
+  background-image: linear-gradient(to right, #7ed56f, #28b485);
+  color: transparent;
+  -webkit-background-clip: text;
+  transition: all 0.1s ease;
+}
+
+.SubSec3,
+.SubSec2 {
+  width: 45%;
+}
+
+h4 {
+  color: gray;
+  margin-bottom: 20px;
+}
+
+p {
+  color: gray;
+  line-height: 2;
+  margin-bottom: 40px;
+}
+
+.SubSec1 {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 93%;
+  margin: 0 auto;
+  padding-top: 50px;
+}
+
+.greenBtn {
+  color: #55c57a;
+  font-size: large;
+  padding: 8px 2px;
+  background-color: rgba(243, 237, 237, 0);
+  border: none;
+  border-bottom: 1px solid #55c57a;
+  position: relative;
+  cursor: pointer;
+  transition: all 0.1s ease;
+}
+
+.SubSec3 {
+  position: relative;
+  height: 100px;
+  top: -90px;
+}
+
+.SubSec3 img {
+  width: 60%;
+  transition: all 0.2s ease;
+}
+
+.SubSec3 .img1 {
+  position: absolute;
+  left: -50px;
+  top: -50px;
+}
+
+.SubSec3 .img2 {
+  position: absolute;
+  right: 0px;
+}
+
+.SubSec3 .img3 {
+  position: absolute;
+  left: 50px;
+  top: 100px;
+}
+
+.section2 {
+  display: flex;
+  justify-content: space-evenly;
+  background-image: linear-gradient(
+      to right,
+      rgba(126, 213, 111, 0.8),
+      rgba(53, 171, 132, 0.8)
+    ),
+    url(https://natours.netlify.app/img/nat-4.jpg);
+  background-size: cover;
+  height: 900px;
+  align-items: center;
+  clip-path: polygon(0 18%, 100% 0%, 100% 82%, 0% 100%);
+}
+
+.section2 .card {
+  width: 20%;
+  background-color: rgba(232, 230, 230, 0.766);
+  text-align: center;
+  padding: 30px;
+  border-radius: 5px;
+}
+
+.card p {
+  margin-bottom: 0;
+  line-height: 1.5;
+}
+
+.card i {
+  font-size: 60px;
+  background-image: linear-gradient(
+    to right,
+    rgb(126, 213, 111),
+    rgb(77, 148, 65)
+  );
+  color: transparent;
+  -webkit-background-clip: text;
+}
+
+.card h4 {
+  margin-top: 50px;
+}
+
+.section3 {
+  margin: 80px 0 100px 0;
+  height: 900px;
+}
+
+.cards {
+  display: flex;
+  justify-content: space-evenly;
+  margin-top: 70px;
+  align-items: center;
+}
+
+.cards :hover .front {
+  transform: rotateY(-180deg);
+}
+
+.cards :hover .back {
+  transform: rotateY(0);
+}
+
+.front {
+  background-color: white;
+  backface-visibility: hidden;
+  height: 100%;
+  position: relative;
+  transition: 1s ease;
+}
+
+.cards .card {
+  width: 25%;
+  height: 550px;
+  border-radius: 5px;
+  position: relative;
+  perspective: 2000px;
+}
+
+.card .top {
+  clip-path: polygon(0 0, 100% 0%, 100% 89%, 0% 100%);
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  height: 40%;
+  margin-bottom: 60px;
+  position: relative;
+}
+
+.bottom ul {
+  list-style-type: none;
+  text-align: center;
+}
+
+.bottom li {
+  border-bottom: 1px solid rgba(84, 84, 84, 0.118);
+  width: 70%;
+  margin: 0 auto;
+  margin-bottom: 20px;
+  padding-bottom: 15px;
+  font-size: 14px;
+  color: rgba(33, 33, 33, 0.696);
+  font-weight: 150px;
+}
+
+.bottom li:nth-last-child(1) {
+  border-bottom: none;
+}
+
+.card span {
+  line-height: 1.5;
+  padding: 8px 15px;
+  -webkit-box-decoration-break: clone;
+}
+
+.card h2 {
+  color: white;
+  font-size: 30px;
+  font-weight: 300px;
+  position: absolute;
+  text-align: right;
+  /* z-index: 999; */
+  width: 70%;
+}
+
+.card1 .top {
+  background-image: linear-gradient(to right bottom, #ffb900, #ff7730),
+    url(https://natours.netlify.app/img/nat-5.jpg);
+  background-size: cover;
+  background-blend-mode: screen;
+}
+
+.card1 span {
+  background-image: linear-gradient(
+    to right bottom,
+    rgba(255, 185, 0, 0.85),
+    rgba(255, 119, 48, 0.85)
+  );
+}
+
+.card1 h2 {
+  left: 80px;
+  top: 125px;
+}
+
+.card2 .top {
+  background-image: linear-gradient(to right bottom, #7ed56f, #28b485),
+    url(https://natours.netlify.app/img/nat-6.jpg);
+  background-size: cover;
+  background-blend-mode: screen;
+}
+
+.card2 span {
+  background-image: linear-gradient(
+    to right bottom,
+    rgba(126, 213, 111, 0.85),
+    rgba(40, 180, 133, 0.85)
+  );
+}
+
+.card2 h2 {
+  left: 80px;
+  top: 125px;
+}
+
+.card3 .top {
+  background-image: linear-gradient(to right bottom, #2998ff, #5543fa),
+    url(https://natours.netlify.app/img/nat-7.jpg);
+  background-size: cover;
+  position: relative;
+  background-blend-mode: screen;
+}
+
+.card3 span {
+  background-image: linear-gradient(
+    to right bottom,
+    rgba(41, 152, 255, 0.85),
+    rgba(86, 67, 250, 0.85)
+  );
+}
+
+.card3 h2 {
+  top: 125px;
+  left: 80px;
+}
+
+.cards .back {
+  height: 100%;
+  width: 100%;
+  text-align: center;
+  color: white;
+  padding: 150px 20px;
+  transform: rotateY(180deg);
+  backface-visibility: hidden;
+  position: absolute;
+  top: 0px;
+  left: 0;
+  transition: 1s ease;
+}
+
+.price {
+  color: white;
+  font-size: 70px;
+  font-weight: lighter;
+  margin-top: 30px;
+}
+.btnBook {
+  margin-top: 50px;
+  font-size: larger;
+}
+
+.card1 .back {
+  background-image: linear-gradient(to right bottom, #ffb900, #ff7730);
+}
+
+.card2 .back {
+  background-image: linear-gradient(to right bottom, #7ed56f, #28b485);
+}
+
+.card3 .back {
+  background-image: linear-gradient(to right bottom, #2998ff, #5543fa);
+}
+
+.section3 .bttn {
+  background-color: #55c57a;
+  color: white;
+  text-align: center;
+  padding: 20px 40px;
+  text-transform: uppercase;
+  border: none;
+  border-radius: 50px;
+  width: 18%;
+  margin-top: 100px;
+  font-size: 15px;
+}
+
+.stories img {
+  width: 20%;
+}
+
+.section4 {
+  background-size: cover;
+  background-image: linear-gradient(
+      to bottom,
+      rgba(255, 255, 255, 0.752),
+      rgba(255, 255, 255, 0.642)
+    ),
+    url(https://64.media.tumblr.com/8a35b143cf857cf6ec52ea783c5f81c9/tumblr_on1hxqZOgl1r9i2iuo1_r2_500.gif);
+  padding: 150px 100px 60px 100px;
+}
+
+.stories {
+  margin: 100px auto;
+  width: 80%;
+}
+
+.story {
+  background-color: rgba(255, 255, 255, 0.78);
+  margin-bottom: 70px;
+  padding: 50px;
+  transform: skewX(-12deg);
+}
+
+.story > * {
+  transform: skewX(12deg);
+}
+
+.story p {
+  margin-bottom: 0;
+}
+
+.story img {
+  width: 300px;
+  transform: translateX(-80px) translateY(-30px);
+  backface-visibility: hidden;
+  transition: 0.5s ease;
+}
+
+.story:hover img {
+  transform: translateX(-80px) translateY(-30px) scale(0.8);
+  filter: blur(2px) brightness(0.5);
+}
+
+.imgcont {
+  position: relative;
+  max-height: 150px;
+  max-width: 150px;
+  border-radius: 50%;
+  margin-right: 30px;
+  float: left;
+  -webkit-clip-path: circle(50% at 50% 50%);
+  clip-path: circle(50% at 50% 50%);
+  -webkit-shape-outside: circle(50% at 50% 50%);
+  shape-outside: circle(50% at 50% 50%);
+}
+
+.section4 .greenBtn {
+  margin: 20px;
+}
+
+.story .name {
+  opacity: 0;
+  transform: translateY(-130px) translateX(45px);
+  color: white;
+  width: 10px;
+  text-align: center;
+  line-height: 1.5;
+  margin: 0;
+  /* padding: 10px; */
+  transition: 0.5s ease;
+}
+.story:hover .name {
+  transform: translateY(-155px) translateX(45px);
+  opacity: 1;
+}
+
+.section5 {
+  height: 800px;
+  padding: 150px 0;
+  background-image: linear-gradient(
+    to bottom,
+    rgba(126, 213, 111, 0.8),
+    rgba(40, 180, 133, 0.8)
+  );
+}
+
+.formCont {
+  width: 93%;
+  margin: auto;
+  background-image: url(https://natours.netlify.app/img/nat-10.jpg);
+  background-size: cover;
+  box-shadow: 2px 2px 5px gray;
+}
+
+.form {
+  background-color: rgba(255, 255, 255, 0.78);
+  clip-path: polygon(0 0, 100% 0%, 73% 100%, 0% 100%);
+  width: 55%;
+  padding: 60px 0;
+}
+
+.form form {
+  width: 85%;
+  margin: 0 auto;
+}
+
+input {
+  margin-bottom: 50px;
+}
+
+.form form input[type="text"],
+input[type="email"] {
+  width: 62%;
+  padding: 15px;
+  border: none;
+  border-bottom: 2.5px solid white;
+  border-radius: 2px;
+  font-size: 15px;
+  font-weight: 300;
+  color: grey;
+  transition: 0.4s ease;
+}
+
+::placeholder {
+  color: rgba(82, 81, 81, 0.724);
+  font-size: 15px;
+}
+
+.section5 .bttn {
+  background-color: #55c57a;
+  color: white;
+  text-align: center;
+  border: none;
+  border-radius: 50px;
+  font-size: 15px;
+  padding: 15px 30px;
+}
+
+.form form input[type="text"]:focus,
+input[type="email"]:focus {
+  outline: none;
+  border-bottom: 2.5px solid orangered;
+}
+
+.form h1 {
+  text-align: left;
+  padding-left: 50px;
+}
+
+.form #small,
+#large {
+  -webkit-appearance: none;
+  width: 28px;
+  height: 28px;
+  border: 4px solid #55c57a;
+  border-radius: 50%;
+  outline: none;
+  margin-bottom: 0 !important;
+}
+
+input[type="radio"]:before {
+  content: "";
+  display: block;
+  width: 13px;
+  height: 13px;
+  margin: 3.3px 0px 5px 3.5px;
+  border-radius: 50%;
+}
+
+input[type="radio"]:checked:before {
+  background-color: #55c57a;
+}
+
+form div {
+  margin-bottom: 30px;
+  display: flex;
+  align-items: center;
+}
+
+form div label {
+  margin-left: 10px;
+  color: rgba(82, 81, 81, 0.724);
+}
+
+input[type="radio"]:last-of-type {
+  margin-left: 50px;
+}
+
+footer {
+  height: 500px;
+  background-color: #333;
+  color: white;
+}
+
+footer .icon {
+  width: 15%;
+  margin: 0 auto;
+  padding: 80px 20px 90px 30px;
+}
+
+img {
+  width: 150px;
+}
+
+.content {
+  width: 90%;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin: 0 auto;
+}
+
+.content .left,
+.right {
+  padding-top: 20px;
+  width: 40%;
+  border-top: 1px solid rgba(139, 137, 137, 0.74);
+}
+
+.content .left ul {
+  list-style-type: none;
+  display: flex;
+  justify-content: space-between;
+}
+
+.content p {
+  font-size: 15px;
+  line-height: 1.4;
+  color: white;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0px 2px 10px rgb(55, 55, 55);
+}
+
+.btn:focus {
+  transform: translateY(1px);
+  box-shadow: 0px 1px 5px rgb(91, 91, 91);
+}
+
+.btn:hover::after {
+  transform: scale(1.7);
+  opacity: 0;
+}
+
+.btn::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  border-radius: inherit;
+  background-color: inherit;
+  transform: scale(0);
+  transition: 0.6s ease;
+}
+
+h1:hover {
+  transform: skewX(20deg) skewY(1.5deg) scale(1.1);
+  text-shadow: 3px 0px 30px rgb(154, 152, 152);
+}
+
+.nostyle:hover {
+  transform: none;
+  text-shadow: none;
+}
+
+.greenBtn:hover {
+  background-color: #55c57a;
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 2px 10px rgb(162, 162, 162);
+}
+
+.greenBtn:focus {
+  transform: translateY(1px);
+  box-shadow: 0 1px 5px rgb(162, 162, 162);
+}
+
+.SubSec3 img:hover {
+  border: 12px solid #55c57a;
+  border-radius: 30px;
+  transform: scale(1.2);
+  padding: 15px;
+  box-shadow: 0 2px 10px rgb(66, 66, 66) inset;
+  z-index: 999;
+}
+
+.SubSec3:hover img:not(:hover) {
+  transform: scale(0.8);
+}
+
+.cardsim:hover {
+  transform: translateY(-20px);
+  box-shadow: 0 5px 10px rgb(106, 106, 106);
+}
+
+.cardsim {
+  box-shadow: 0 5px 10px rgb(105, 105, 105);
+  transition: all 0.6s ease;
+}
+
+.textfx {
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.textfx:hover {
+  color: #55c57a;
+  transform: scale(1.2) skewY(3deg);
+  padding: 5px 0;
+  background-color: #333;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.625);
+}
+.span {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.span::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: 20;
+}
+
+.span:hover {
+  transform: scale(1.2) skewY(3deg);
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.625);
+  color: #55c57a;
+  background-color: #333;
+}
